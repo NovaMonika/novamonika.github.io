@@ -86,11 +86,11 @@
 
 	const entries = urlParams.entries();
 
-	var nsfwtick = "unchecked";
+	var lewdtick = "unchecked";
 	for(const entry of entries) {
-		if (entry[0].toUpperCase() == "NSFW") {
+		if (entry[0].toUpperCase() == "LEWD") {
 			if (entry[1] == 1){
-				nsfwtick = "checked";
+				lewdtick = "checked";
 			}
 		}
 	}
@@ -146,7 +146,7 @@
 				}
 			}
 
-			typemenu += "<span class=\"inputlabel\"><input type=\"checkbox\" class=\"nsfwcheckbox\" id=\"cbNSFW\" name=\"nsfw\" onclick=\"updatelists()\" "+nsfwtick+"><label for=\"cbNSFW\">NSFW (18+)</label></span>"
+			typemenu += "<span class=\"inputlabel\"><input type=\"checkbox\" class=\"lewdcheckbox\" id=\"cbLEWD\" name=\"lewd\" onclick=\"updatelists()\" "+lewdtick+"><label for=\"cbLEWD\">Lewd Expressions</label></span>"
 			
 			chrmenu = "<br>Characters:<br>"
 
@@ -237,7 +237,7 @@
 			}
 		});
 
-		document.querySelectorAll('.nsfwcheckbox').forEach(function(checkbox) {
+		document.querySelectorAll('.lewdcheckbox').forEach(function(checkbox) {
     		if (!checkbox.checked) {
 				document.querySelectorAll('.'+checkbox.name).forEach(function(item) {
 					item.style.setProperty('display', 'none', 'important');
